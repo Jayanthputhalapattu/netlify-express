@@ -7,16 +7,15 @@ const SocialMedia = ()=>{
            <Row>
            {/* <Col style={{fontSize:14}}><div/>&copy;Made with Love by Web Development Team</Col> */}
                <Col>
-               <FaFacebook />
+             <span style={{fontSize:15}}>Developed by Web-Team</span>
                </Col>
                <Col>
-                <FaInstagram />
+               <span style={{float:"right"}}>
+               <FaInstagram />
 
+<FaFacebook />
+                   </span> 
                </Col>
-               <Col>
-               <FaTwitter/>
-               </Col>
-            
            </Row>
        </Container>
    )

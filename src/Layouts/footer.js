@@ -3,7 +3,7 @@ import SocialMedia from "./SocialMedia"
 import {Container,Col} from "reactstrap"
 const Footer = () =>{
    return(
-    <Container fluid tag="footer" className="text-center bg-info text-white fixed-bottom p-2">
+    <Container fluid tag="footer" className=" bg-info text-white  p-1">
         <SocialMedia />
         <Col>
         
