@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-
+import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
+import Home from "./Components/Home"
+import Events from "./Components/events"
+import Header from "./Layouts/header"
+import SocialMedia from './Layouts/SocialMedia';
+import Footer from './Layouts/footer';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Header />
+        {/* <span style={{float:"right",position:"relative",marginTop:window.innerHeight-250}}><SocialMedia /></span> */}
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path = "/events" component={Events} />
+   
+        </Switch>
+      
+   <Footer />
+</Router>
   );
 }
 
