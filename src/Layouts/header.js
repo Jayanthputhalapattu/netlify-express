@@ -60,19 +60,19 @@ const Header = () =>{
       <a href="/" class="brand-logo">SVUCE</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" ><FaBars /></i></a>
       <ul class="right hide-on-med-and-down">
-      <li><a href="/">HOME</a></li>
-        <li><a href="/events">EVENTS</a></li>
-        <li><a href="/register">REGISTER</a></li>
-        <li><a href="/contact">CONTACT</a></li>
+      <li><Link to="/">HOME</Link></li>
+        <li><Link to="/events">EVENTS</Link></li>
+        <li><Link to="/register">REGISTER</Link></li>
+        <li><Link to="/contact">CONTACT</Link></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-  <li><a href="/">HOME</a></li>
-        <li><a href="/events">EVENTS</a></li>
-        <li><a href="/register">REGISTER</a></li>
-        <li><a href="/contact">CONTACT</a></li>
+  <li><Link to="/">HOME</Link></li>
+        <li><Link to="/events">EVENTS</Link></li>
+        <li><Link to="/register">REGISTER</Link></li>
+        <li><Link to="/contact">CONTACT</Link></li>
   </ul>
           
             
