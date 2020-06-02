@@ -9,6 +9,7 @@ import Header from "./Layouts/header"
 import Footer from './Layouts/footer';
 
 import Contact from './Components/Contact';
+import Register from './Components/Register';
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path = "/contact" component={Contact} />
             <Route path="/events" component ={Events} />
+            <Route path="/register" component={Register} />
         </Switch>
       
    <Footer />

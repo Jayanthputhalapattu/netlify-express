@@ -5,7 +5,7 @@ const Register = () =>{
        <Container fluid>
            <Col>
              <Row>
-
+               Register
              </Row>
            </Col>
        </Container>
