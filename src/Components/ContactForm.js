@@ -6,8 +6,8 @@ const ContactCard = ({Sname,Role,phtoUrl,phoneNum}) =>{
   return(
       <div>
           
-      <Card style={{width:360,height:450,marginBottom:75,border:"1px solid grey",boxShadow:"3px 3px lightblue"}} className="Cardq">
-         <CardImg  src={phtoUrl} top style={{width:"100px",height:"100px",borderRadius:"50% 50%",margin:"auto",marginTop:-50,}}></CardImg>
+      <Card style={{height:408}} className="Cardq">
+         <CardImg  src={phtoUrl} top style={{width:"100px",height:"100px",borderRadius:"50% 50%",margin:"auto",marginTop:-50,marginLeft:100}}></CardImg>
           <CardBody style={{}}>
             <h2>{Sname}</h2>
            <p>{Role}</p> 

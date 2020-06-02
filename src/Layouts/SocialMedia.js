@@ -7,7 +7,7 @@ const SocialMedia = ()=>{
            <Row>
            {/* <Col style={{fontSize:14}}><div/>&copy;Made with Love by Web Development Team</Col> */}
                <Col>
-             <span style={{fontSize:15}}>Developed by Web-Team</span>
+             <span style={{fontSize:15,wordWrap:"no-wrap"}}>Developed by WebTeam</span>
                </Col>
                <Col>
                <span style={{float:"right"}}>

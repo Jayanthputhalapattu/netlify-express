@@ -1,9 +1,10 @@
 import React from 'react';
+import Events from "./Components/events"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
 import Home from "./Components/Home"
-import Events from "./Components/events"
+
 import Header from "./Layouts/header"
 import Footer from './Layouts/footer';
 
@@ -16,7 +17,7 @@ function App() {
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path = "/contact" component={Contact} />
-   
+            <Route path="/events" component ={Events} />
         </Switch>
       
    <Footer />
