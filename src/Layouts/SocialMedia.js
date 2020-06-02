@@ -10,7 +10,7 @@ const SocialMedia = ()=>{
              <span style={{fontSize:15,letterSpacing:0.8}}><div/>&copy; WebTeam</span>
                </Col>
                <Col >
-               <span style={{marginTop:"50%"}}>
+               <span >
                <FaInstagram />
 
               <span style={{marginLeft:"50%"}}><FaFacebook /></span>

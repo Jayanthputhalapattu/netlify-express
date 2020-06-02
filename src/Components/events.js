@@ -42,7 +42,7 @@ const Events = () =>{
           </Col>
         </Row>
         <Row><Col>
-          <div style={{textAlign:"center",letterSpacing:0.8}}>
+          <div style={{textAlign:"center",letterSpacing:0.8,paddingBottom:60}}>
            <span> <h2>Don't wait grab all the events with single registration!</h2></span>
             <span ><ButtNav value="REGISTER" link="register"/></span>
           </div>

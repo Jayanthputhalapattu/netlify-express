@@ -34,8 +34,8 @@ const Register = () =>{
           </Col>
           </Row>
           <Row>
-              <Col md={12} style={{}}>
-              <span style={{position:"fixed",top:"50%",left:"35%"}}><Button style={{background:"blue",border:"none",color:"white",outline:0}} onClick={HandleAuth}>Sign up with Google <span style={{fontSize:17}}><FaGoogle/></span> </Button></span>
+              <Col >
+              <span style={{position:"fixed",top:"50%"}}><Button style={{background:"blue",border:"none",color:"white",outline:0}} onClick={HandleAuth}>Sign up with Google <span style={{fontSize:17}}><FaGoogle/></span> </Button></span>
               </Col>
           </Row>
       </Container>

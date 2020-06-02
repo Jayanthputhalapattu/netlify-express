@@ -16,7 +16,17 @@ import { UserContext } from './context/UserContext';
 firebase.initializeApp(firebaseConfig)
 function App() {
   const [user,setUser] = useState(null);
+//   var functions = require('firebase-functions');
+// var express = require('express');
 
+// var app = express();
+// var router = express.Router();
+
+
+
+// app.use('/fns', router);
+
+// exports.fns = functions.https.onRequest(app);
   return (
     <Router>
       <UserContext.Provider value={{user,setUser}}>

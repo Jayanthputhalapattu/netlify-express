@@ -55,24 +55,24 @@ const Header = () =>{
       //   </Collapse>
       // </Navbar>
       <>
-     <nav style={{background:"#EA7773"}}>
-    <div class="nav-wrapper" >
-      <a href="/" class="brand-logo">SVUCE</a>
+     <nav style={{background:"linear-gradient(to right,#E55D87,#5FC3E4)"  }}>
+    <div class="nav-wrapper">
+      <a href="/" style={{marginLeft:"52px",fontSize:24,textDecoration:"none"}}>SVUCE</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" ><FaBars /></i></a>
-      <ul class="right hide-on-med-and-down">
-      <li><Link to="/">HOME</Link></li>
-        <li><Link to="/events">EVENTS</Link></li>
-        <li><Link to="/register">REGISTER</Link></li>
-        <li><Link to="/contact">CONTACT</Link></li>
+      <ul class="right hide-on-med-and-down navli">
+      <li><Link to="/" tag={Link}>HOME</Link></li>
+        <li><Link to="/events" tag={Link}>EVENTS</Link></li>
+        <li><Link to="/register" tag={Link}>REGISTER</Link></li>
+        <li><Link to="/contact" tag={Link}>CONTACT</Link></li>
       </ul>
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-demo">
-  <li><Link to="/">HOME</Link></li>
-        <li><Link to="/events">EVENTS</Link></li>
-        <li><Link to="/register">REGISTER</Link></li>
-        <li><Link to="/contact">CONTACT</Link></li>
+  <ul class="sidenav" id="mobile-demo" style={{background:"linear-gradient(to bottom,#7F7FD5,#91EAE4)"}}>
+  <li><Link to="/" tag={Link}>HOME</Link></li>
+        <li><Link to="/events" tag={Link} >EVENTS</Link></li>
+        <li><Link to="/register" tag={Link}>REGISTER</Link></li>
+        <li><Link to="/contact" tag={Link}>CONTACT</Link></li>
   </ul>
           
             
