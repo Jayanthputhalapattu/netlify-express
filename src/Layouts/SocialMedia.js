@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Row,Col } from "reactstrap"
-import {FaFacebook, FaInstagram, FaTwitter} from "react-icons/fa"
+import {FaFacebook, FaInstagram} from "react-icons/fa"
 const SocialMedia = ()=>{
    return(
        <Container fluid style={{fontSize:30}} className="socialMed">

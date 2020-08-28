@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 
-import { Container,Row,Col, Navbar, NavbarToggler, Collapse, Nav, NavItem, NavbarBrand,NavbarText } from "reactstrap";
-import ButtNav from "./ButtNavBa";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import * as M from "materialize-css"
 
 const Header = () =>{
-    const [isOpen,setIsOpen] = useState(false)
-    const toggle = ()=>setIsOpen(!isOpen)
+  
+  
    
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.sidenav');
@@ -21,7 +19,9 @@ const Header = () =>{
       onCloseStart: null,
       onCloseEnd: null,
       preventScrolling: true});
+      console.log(instances)
     });
+    
     return(
         
         
@@ -58,7 +58,7 @@ const Header = () =>{
      <nav style={{background:"linear-gradient(to right,#E55D87,#5FC3E4)"  }}>
     <div class="nav-wrapper">
       <a href="/" style={{marginLeft:"52px",fontSize:24,textDecoration:"none"}}>SVUCE</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" ><FaBars /></i></a>
+      <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" ><FaBars /></i></a>
       <ul class="right hide-on-med-and-down navli">
       <li><Link to="/" tag={Link}>HOME</Link></li>
         <li><Link to="/events" tag={Link}>EVENTS</Link></li>

@@ -1,6 +1,6 @@
 import React from "react"
-import { Container,Row,Col, ListGroup, ListGroupItem } from "reactstrap";
-import SocialMedia from "../Layouts/SocialMedia";
+import { Container,Row,Col } from "reactstrap";
+
 import ButtNav from "../Layouts/ButtNavBa"
 const Home = () =>{
      return(
@@ -27,10 +27,11 @@ const Home = () =>{
 
 </svg> */}
 <iframe width="360" height="250" style={{marginLeft:10,border:"none"}}
-src="https://www.youtube.com/embed/b4zquGxito0?autoplay=0" >
+src="https://www.youtube.com/embed/b4zquGxito0?autoplay=0" title="video">
 </iframe>
+
 <div style={{padding:"20px 10px 80px 10px"}}>
-<p style={{fontSize:20,wordSpacing:.8,fontFamily: "'Megrim', cursive",
+<p style={{fontSize:20,wordSpacing:.8,
 fontFamily: "'Orbitron', sans-serif"}}>Welcome to the most awaited national level technical symposium.Sigmoid is the most prestigious event conducted
     by department of Electronics and Communication Engineering ,Sri Venkateswara University College of Engineering.Last year the event was held on due to COVID-19
     pandemic.

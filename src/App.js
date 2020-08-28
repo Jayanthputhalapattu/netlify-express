@@ -1,4 +1,4 @@
-import React, { useContext,useState } from 'react';
+import React, { useState } from 'react';
 import Events from "./Components/events"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';

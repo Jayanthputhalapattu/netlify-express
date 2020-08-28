@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const ButtNav = ({value,link}) =>{
     const ripple = ()=>{
-        var y = document.querySelector('btnn')
+       
        
     }
     return(

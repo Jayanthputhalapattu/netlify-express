@@ -1,6 +1,6 @@
 import React from "react"
 import { Card, CardBody, CardImg, } from "reactstrap"
-import { FaPhone, FaPhoneAlt, FaWhatsapp } from "react-icons/fa"
+import {  FaPhoneAlt, FaWhatsapp } from "react-icons/fa"
 
 const ContactCard = ({Sname,Role,phtoUrl,phoneNum}) =>{
   return(

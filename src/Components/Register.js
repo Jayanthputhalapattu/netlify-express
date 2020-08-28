@@ -1,5 +1,5 @@
 import React,{useContext} from "react"
-import { Container, Col, Row, Button } from "reactstrap"
+import {  Button } from "reactstrap"
 import { UserContext } from "../context/UserContext"
 import { FaGoogle } from "react-icons/fa"
 import * as firebase from 'firebase';
@@ -11,7 +11,7 @@ const Register = () =>{
     const HandleAuth =()=>{
         firebase.auth().signInWithPopup(provider).then(function(result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = result.credential.accessToken;
+            // var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
            
