@@ -26,19 +26,14 @@ const Register = () =>{
         
         <div>
         {context.user?.email ? (<h1>welcome {context.user.displayName}</h1>):(  
-             <Container fluid>
-          
-          <Row> 
-          <Col>
-               <p style={{fontSize:25,paddingLeft:"10%",letterSpacing:1}}>All set,Register to witness national level symposium!</p>
-          </Col>
-          </Row>
-          <Row>
-              <Col >
-              <span style={{position:"fixed",top:"50%"}}><Button style={{background:"blue",border:"none",color:"white",outline:0}} onClick={HandleAuth}>Sign up with Google <span style={{fontSize:17}}><FaGoogle/></span> </Button></span>
-              </Col>
-          </Row>
-      </Container>
+           <>
+            <p style={{fontSize:25,paddingLeft:"10%",letterSpacing:1}}>All set,Register to witness national level symposium!</p>
+              
+          <div style={{margin:"auto" ,width:300,height:400}}>
+             <span style={{position:"fixed",top:"50%"}}><Button style={{background:"blue",border:"none",color:"white",outline:0}} onClick={HandleAuth}>Sign up with Google <span style={{fontSize:17}}><FaGoogle/></span> </Button></span>
+              
+          </div>
+        </>
       )}
        </div>
    )

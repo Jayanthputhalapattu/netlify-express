@@ -68,7 +68,7 @@ const Header = () =>{
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-demo" style={{background:"linear-gradient(to bottom,#7F7FD5,#91EAE4)"}}>
+  <ul class="sidenav" id="mobile-demo">
   <li><Link to="/" tag={Link}>HOME</Link></li>
         <li><Link to="/events" tag={Link} >EVENTS</Link></li>
         <li><Link to="/register" tag={Link}>REGISTER</Link></li>
