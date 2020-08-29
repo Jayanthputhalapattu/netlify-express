@@ -13,7 +13,7 @@ const Payment = ()=>{
         const respo = res.data;
         
         const options ={
-          key: 'rzp_test_RdkiOl654i5b7N',
+          key: 'rzp_live_mvXKJ9AvmwCwaz',
           name :' jayanth app solutions',
           description :'app developement',
           order_id :respo.id,
