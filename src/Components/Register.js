@@ -11,7 +11,7 @@ import Axios from "axios";
 const Register = () =>{
     
     const context = useContext(UserContext)
-    const url = "http://localhost:3000/.netlify/functions/server/find"
+    const url = "https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/find"
 
 
     var provider = new firebase.auth.GoogleAuthProvider();
