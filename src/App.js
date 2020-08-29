@@ -13,9 +13,11 @@ import Register from './Components/Register';
 import firebase from "firebase/app"
 import firebaseConfig from "./config/firebaseConfig"
 import { UserContext } from './context/UserContext';
+import {paymentContext} from "./context/PaymentContext"
 firebase.initializeApp(firebaseConfig)
 function App() {
   const [user,setUser] = useState(null);
+  const[payment,setPayment] = useState(null)
 //   var functions = require('firebase-functions');
 // var express = require('express');
 
@@ -30,16 +32,20 @@ function App() {
   return (
     <Router>
       <UserContext.Provider value={{user,setUser}}>
-      <Header />
+           {/* <paymentContext.provider value={{payment,setPayment}}> */}
+           <Header />
         {/* <span style={{float:"right",position:"relative",marginTop:window.innerHeight-250}}><SocialMedia /></span> */}
         <Switch>
             <Route exact path="/" component={Home} />
-            <Route path = "/contact" component={Contact} />
-            <Route path="/events" component ={Events} />
-            <Route path="/register" component={Register} />
+            <Route path = "/contact" component={Contact} exact/>
+            <Route path="/events" component ={Events} exact/>
+            <Route path="/register" component={Register} exact/>
         </Switch>
       
    <Footer />
+
+           {/* </paymentContext.provider> */}
+     
       </UserContext.Provider>
        
 </Router>
