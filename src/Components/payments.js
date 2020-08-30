@@ -6,7 +6,7 @@ const Payment = ()=>{
     const context = useContext(UserContext)
     const handleRequest =async (e)=>{
       e.preventDefault();
-      axios.get('https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/checkk')
+      axios.get('http://localhost:5000/.netlify/functions/server/checkk')
       .then(res=>{
         
          
@@ -24,13 +24,13 @@ const Payment = ()=>{
           handler: async (response) => {
             try {
              const paymentId = response.razorpay_payment_id;
-             const url = 'https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/succeescallback'
-            // const url = 'http://localhost:3000/.netlify/functions/server/succeescallback'
+            //  const url = 'https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/succeescallback'
+             const url = 'http://localhost:5000/.netlify/functions/server/succeescallback'
              const captureResponse = await axios.post(url, {razorpay_order_id :respo.id, razorpay_payment_id:paymentId,razorpay_signature:response.razorpay_signature})
              console.log(captureResponse)
          
              
-              const auth = await axios.post("http://localhost:3000/.netlify/functions/server/register/contest",{email:context.user.email,fullname:"xyz",collegename:"xyxy"})
+              const auth = await axios.post("https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/register/contest",{email:context.user.email,fullname:"xyz",collegename:"xyxy"})
               console.log(auth)
               var newUser =context.user
               newUser["payment"] =captureResponse.data
@@ -43,10 +43,7 @@ const Payment = ()=>{
               else{
                 alert("Payment revoked")
               }
-              
-              
-             
-            
+
              } catch (err) {
               console.log(err);
             }

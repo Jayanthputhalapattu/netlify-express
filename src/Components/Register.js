@@ -3,61 +3,89 @@ import {  Button } from "reactstrap"
 import { UserContext } from "../context/UserContext"
 import { FaGoogle } from "react-icons/fa"
 import * as firebase from 'firebase';
-import { Redirect } from "react-router-dom"
-import Payment from "./payments";
-import Axios from "axios";
+import { Redirect ,withRouter} from "react-router-dom"
 
-
+import axios from "axios";
+import {Container,Col,Row, Toast,} from "reactstrap"
+import "react-toastify/dist/ReactToastify.css";
+import {toast, ToastContainer} from "react-toastify"
 const Register = () =>{
     
-    const context = useContext(UserContext)
-    const url = "https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/find"
-
-
-    var provider = new firebase.auth.GoogleAuthProvider();
-    const HandleAuth =()=> {
-     firebase.auth().signInWithPopup(provider)
-      .then( async  function(result) {
-           
-            var user = result.user;
-             var paymentTrue = await Axios.post(url,{email:user.email})
-             user["payment"] = paymentTrue.data
-           context.setUser(user)
-        
-           
-            return <Redirect to = "/register" />
-    })
-    
-    
-    
-    }
-    
-   return(
+  const [credentials,setCrediantials] = useState({
+    username : "JAYANTH",
+    password : "jayanth1234bf"
+ })
+const [isLoggedin,setIsloggedin] = useState()
+const changeHandler = () =>{
+       setCrediantials({
+           username : document.getElementById("uname").value,
+           password : document.getElementById("pword").value
+       })
       
-    
-       
-        <div>
-         
-        {context.user?.email ? 
-        <>
-         
-        <h1>welcome {context.user.displayName}</h1>
-        {context.user.payment?"Your payment is success":<Payment />}
-        
-        
-        </>:(  
-           <>
-            <p style={{fontSize:25,paddingLeft:"10%",letterSpacing:1}}>All set,Register to witness national level symposium!</p>
-              
-          <div style={{margin:"auto" ,width:300,height:400}}>
-             <span style={{position:"fixed",top:"50%"}}><Button style={{background:"blue",border:"none",color:"white",outline:0}} onClick={HandleAuth}>Sign up with Google <span style={{fontSize:17}}><FaGoogle/></span> </Button></span>
-              
-          </div>
-        </>
-      
-      )}
-       </div>
-   )
+}
+const sendHandler =async (e)=>{
+    e.preventDefault();   
+   var response = await axios.post("http://localhost:5000/.netlify/functions/server/user/login",credentials)
+  
+   if (response.data.success==false){
+        setIsloggedin(false)
+        return toast(response.data.status.message,{type:"error"})
+     }
+     else {
+     
+      localStorage.setItem("login",JSON.stringify({
+        login     : true,
+        token : response.data.token
+    }))
+        window.location.reload()
+     }
+   
+}
+if (localStorage.login)
+{
+  var token = JSON.parse(localStorage.getItem('login')).token
 }
 
-export default Register
+ var getData=async()=>{
+  var response = await axios.get('http://localhost:5000/.netlify/functions/server/user/validjwt',
+
+  {headers: { Authorization: `Bearer ${token}` }})
+  var ret = response.data.success
+ 
+   setIsloggedin(ret)
+   return ret
+}
+getData()
+if(isLoggedin)
+{
+  return <Redirect to="/dashboard"/>
+}
+return(
+     <div>
+            <ToastContainer position="bottom-left"/>
+          <Container >
+     
+              <Row >
+                  <Col>
+                  </Col>
+                  <Col >
+                  
+                       <div className = "loginForm">
+                              <span><h2 style={{textAlign :"center"}}>LOGIN</h2></span>
+                           <form onSubmit ={sendHandler} autoComplete="false" >
+                               <input type = "text" name = "name" placeholder= "username" required value={credentials.username} onChange = {changeHandler} id="uname"/>
+                               <input type = "password" id = "pword" placeholder = "password" required value = {credentials.password} onChange = {changeHandler}/>
+                               <input type = "submit" value = "Login" id= "button"/>
+                           </form>
+                       </div>
+                  </Col>
+                  <Col>
+                  </Col>
+              </Row>
+             
+          </Container>
+     </div>
+)
+}
+
+export default (Register)

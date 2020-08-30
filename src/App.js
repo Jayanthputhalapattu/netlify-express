@@ -14,21 +14,12 @@ import firebase from "firebase/app"
 import firebaseConfig from "./config/firebaseConfig"
 import { UserContext } from './context/UserContext';
 import {paymentContext} from "./context/PaymentContext"
+import Dashboard from './Components/Dashbaord';
 firebase.initializeApp(firebaseConfig)
 function App() {
   const [user,setUser] = useState(null);
   const[payment,setPayment] = useState(null)
-//   var functions = require('firebase-functions');
-// var express = require('express');
 
-// var app = express();
-// var router = express.Router();
-
-
-
-// app.use('/fns', router);
-
-// exports.fns = functions.https.onRequest(app);
   return (
     <Router>
       <UserContext.Provider value={{user,setUser}}>
@@ -40,6 +31,7 @@ function App() {
             <Route path = "/contact" component={Contact} exact/>
             <Route path="/events" component ={Events} exact/>
             <Route path="/register" component={Register} exact/>
+            <Route path="/dashboard" component={Dashboard} exact/>
         </Switch>
       
    <Footer />
