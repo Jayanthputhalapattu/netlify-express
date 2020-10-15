@@ -3,7 +3,7 @@ import React, {  } from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import * as M from "materialize-css"
-
+import config from "../APIcalls/AuthToken"
 const Header = () =>{
   
   
@@ -62,17 +62,26 @@ const Header = () =>{
       <ul class="right hide-on-med-and-down navli">
       <li><Link to="/" tag={Link}>HOME</Link></li>
         <li><Link to="/events" tag={Link}>EVENTS</Link></li>
-        <li><Link to="/register" tag={Link}>REGISTER</Link></li>
+        <li><Link to="/login" tag={Link}>LOGIN</Link></li>
+        <li><Link to="/signup" tag={Link}>REGISTER</Link></li>
         <li><Link to="/contact" tag={Link}>CONTACT</Link></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-  <li><Link to="/" tag={Link}>HOME</Link></li>
-        <li><Link to="/events" tag={Link} >EVENTS</Link></li>
-        <li><Link to="/register" tag={Link}>REGISTER</Link></li>
-        <li><Link to="/contact" tag={Link}>CONTACT</Link></li>
+
+          <li><Link to="/" tag={Link}>HOME</Link></li>
+          <li><Link to="/events" tag={Link} >EVENTS</Link></li>
+          <li><Link to="/contact" tag={Link}>CONTACT</Link></li>
+        {config.isLogged ?<>
+        
+        </>:<>
+        <li><Link to="/login" tag={Link}>LOGIN</Link></li>
+        <li><Link to="/signup" tag={Link}>REGISTER</Link></li>
+        </>}
+       
+    
   </ul>
           
             

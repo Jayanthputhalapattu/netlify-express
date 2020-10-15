@@ -2,9 +2,10 @@ import React from "react"
 import { Container,Row,Col } from "reactstrap";
 
 import ButtNav from "../Layouts/ButtNavBa"
+import "../mainpage.css"
 const Home = () =>{
      return(
-        <Container fluid>
+        <Container fluid className="gome">
             <Row style={{}}>
                <Col  md={5} sm={6} style={{paddingBottom:100}}>
              
@@ -40,11 +41,15 @@ fontFamily: "'Orbitron', sans-serif"}}>Welcome to the most awaited national leve
 </div>
 
             </Col>
-            {/* <Col>
-          <span style={{float:"right",paddingTop:140}}><SocialMedia /></span> 
-           </Col> */}
+          
             </Row>
-           
+            <Row>
+            <div class='box'>
+          <div class='wave -one'></div>
+          <div class='wave -two'></div>
+          <div class='wave -three'></div>
+      </div>
+      </Row>
         </Container>
 
      

@@ -2,11 +2,18 @@ import React, { useContext } from "react"
 import axios from "axios"
 import {UserContext} from "../context/UserContext"
 import { Redirect } from "react-router-dom"
+import { Button } from "reactstrap"
 const Payment = ()=>{
-    const context = useContext(UserContext)
+     
+     if (localStorage.login)
+     {
+       var token = JSON.parse(localStorage.getItem('login')).token
+
+     }
+     console.log(token)
     const handleRequest =async (e)=>{
       e.preventDefault();
-      axios.get('http://localhost:5000/.netlify/functions/server/checkk')
+     await axios.get('https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/checkk',{headers: { Authorization: `Bearer ${token}` }})
       .then(res=>{
         
          
@@ -18,26 +25,22 @@ const Payment = ()=>{
           description :'app developement',
           order_id :respo.id,
           prefill:{
-              email:context.user.email,
-              phone :9381404453
+                    phone :9381404453
           },
           handler: async (response) => {
             try {
              const paymentId = response.razorpay_payment_id;
+             console.log(token)
             //  const url = 'https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/succeescallback'
-             const url = 'http://localhost:5000/.netlify/functions/server/succeescallback'
-             const captureResponse = await axios.post(url, {razorpay_order_id :respo.id, razorpay_payment_id:paymentId,razorpay_signature:response.razorpay_signature})
-             console.log(captureResponse)
+             const url = 'https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/succeescallback'
+             const captureResponse = await axios.post(url, {razorpay_order_id :respo.id, razorpay_payment_id:paymentId,razorpay_signature:response.razorpay_signature},{headers: { Authorization:`Bearer ${token}`}})
+            
          
              
-              const auth = await axios.post("https://laughing-perlman-483d29.netlify.app/.netlify/functions/server/register/contest",{email:context.user.email,fullname:"xyz",collegename:"xyxy"})
-              console.log(auth)
-              var newUser =context.user
-              newUser["payment"] =captureResponse.data
-              await context.setUser(newUser)
+            
               if(captureResponse.data==true)
               {
-                alert("Payment is success")
+                 window.location.reload()
            
               }
               else{
@@ -61,13 +64,7 @@ const Payment = ()=>{
     }
     return(
       <div>
-        <form>
-          <input type="text" required/>
-        <input type="submit" onClick={handleRequest} value="pay with razorpay"/>
-        
-        
-        </form>
-       
+         <Button className="payraz" onClick={handleRequest}>PAY 550</Button>
         
       </div>
     )

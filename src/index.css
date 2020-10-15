@@ -1,0 +1,17 @@
+.loginn{
+    background-image: url('/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.loginForm{
+    
+    
+    width: 300px;
+    background:white;
+    position: relative;
+    padding:20px 30px;
+    border-radius: 8px;
+    box-shadow:  0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    margin:auto;
+    top:50%
+}
