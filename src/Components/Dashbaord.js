@@ -32,9 +32,7 @@ const Dashboard =() =>{
    }
   
  
-   if(!config.isLogged){
-       return <Redirect to="/login"/>
-   }
+
  
    
    return(
